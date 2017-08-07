@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Great Number Game</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/GNG_styles.css') }}">
+  <head>
+  <body>
+        <h1>Welcome to the Great Number Game!</h1>
+        <h4>I am thinking of a number between 1 and 100</h4>
+        <h4>Take a Guess!</h4>
+        
+        <div id='toolow_box' name='toolow'>
+            <h1>{{ text }}</h1>
+        </div>  
+
+        <form action='/guess' method='post'>
+            <input type="text" name='enter_guess'>
+            <input type='submit' name='submit' value='Guess'>
+        </form>
+
+        <form action='/play_again' method='post'>
+            <input type='submit' name='playagain' value='New Game'>
+        </form> 
+  </body>
+</html>

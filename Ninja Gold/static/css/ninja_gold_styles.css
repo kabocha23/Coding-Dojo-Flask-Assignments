@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 1000px;
+    background-color: steelblue; 
+}
+p{
+    color: lightgrey;
+}
+.destinations{
+    width: 100%;
+    display: block
+}
+.dest_box{
+    width: 210px;
+    height: 150px;
+    text-align: center;
+    border: 1px solid black;
+    display: inline-block
+}
+form.farm{
+    margin: 20px 0px;
+}
+form.cave{
+    margin: 20px 0px;
+}
+form.house{
+    margin: 20px 0px;
+}
+form.casino{
+    margin: 20px 0px;
+}
+.activities p{
+    width: 100%;
+    height: 300px;
+    border: 1px solid black;
+}

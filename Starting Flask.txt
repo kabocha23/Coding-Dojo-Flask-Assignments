@@ -1,0 +1,9 @@
+cd to the directory you want to create the virtual Env in
+
+type in cmd:
+python -m virtualenv flaskEnv
+
+let it boot, then type:
+call flaskEnv/Scripts/activate
+
+pip install flask

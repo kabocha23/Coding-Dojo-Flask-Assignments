@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>Hello, welcome to my page!</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/DojoSurveywVal_styles.css') }}">
+  <head>
+  <body>
+    <!-- {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <p>{{message}}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %} -->
+    <form action='/results' method='post'>     
+        <p>Your Name: <input type='text' name='name'></p>
+        <p>Your Location:
+        <select class='location' name='location'>
+          <option value="sanjose">San Jose</option>
+          <option value="seattle">Seattle</option>
+          <option value="losangeles">Los Angeles</option>
+          <option value="austin">Austin</option>
+        </select></p>
+        <p>Favorite Language:
+        <select class='language' name='language'>
+          <option value="python">Python</option>
+          <option value="html">HTML</option>
+          <option value="javascript">JavaScript</option>
+          <option value="css">CSS</option>
+        </select></p>
+        <p>Comments (optional):</p>
+        <textarea class='comments' rows="4" cols="50" name='comments'></textarea>
+        <input class='submit_btn' type='submit' value='Submit'>
+    </form>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <h1>{{message}}</h1>
+        {% endfor %}
+        {% endif %}
+        {% endwith %} 
+  </body>
+</html>
+

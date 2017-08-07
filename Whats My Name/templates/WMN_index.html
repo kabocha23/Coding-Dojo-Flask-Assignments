@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>Hello, welcome to my page!</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/WMN_styles.css') }}">
+  <head>
+  <body>
+    <form action='/process' method='post'>
+        Your Name: <input type='text' name='name'>
+        <input type='submit' value='Submit'>
+    </form>
+  </body>
+</html>

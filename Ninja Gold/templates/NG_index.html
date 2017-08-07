@@ -1,0 +1,56 @@
+
+<html>
+  <head>
+    <title>Ninja Gold Game</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ninja_gold_styles.css') }}">
+  <head>
+  <body>
+        <h1>Welcome to Ninja Sim</h1>
+        <h4>Help the Ninja gain gold</h4>
+        <div class='your_gold'>
+            <h4>Your Gold: {{ session['gold_counter'] }}</h4>
+        </div>
+
+            <div class='dest_box'>
+                <h2>Farm</h2>
+                <h3>(Earns 10-20 gold)</h3>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="building" value="Farm" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div class='dest_box'>
+                <h2>Cave</h2>
+                <h3>(Earns 5-10 gold)</h3>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="building" value="Cave" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div class='dest_box'>
+                <h2>House</h2>
+                <h3>(Earns 2-5 gold)</h3>                
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="building" value="House" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div class='dest_box'>
+                <h2>Casino</h2>
+                <h3>(Earn/Lose up to 50 gold)</h3>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="building" value="Casino" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+
+        <div class='activities'>
+            <h2>Activities:</h2>
+            <p>{{ session['message'] }}</p>
+        </div>
+
+        <form action='/play_again' method='post'>
+            <input type='submit' name='playagain' value='New Game'>
+        </form> 
+  </body>
+</html>
