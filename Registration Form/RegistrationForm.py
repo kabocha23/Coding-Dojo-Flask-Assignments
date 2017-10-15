@@ -21,24 +21,29 @@ def results():
     
     if len(first_name) < 1:
         flash("First Name cannot be empty")
+    elif not FIRSTLAST_REGEX.match(first_name):
+        flash("First Name can only contain letters")
+
     elif len(last_name) < 1:
         flash("Last Name cannot be empty")
+    elif not FIRSTLAST_REGEX.match(last_name):
+        flash("Last Name can only contain letters")
+
+    elif not EMAIL_REGEX.match(email):
+        flash("Invalid Email Address format")
+
     elif len(password) < 1:
         flash("Please enter a password")
     elif len(password) < 8:
         flash("Password must be longer than 8 characters")
+    elif not UPPERDIGIT_REGEX.match(password):
+        flash("Password must contain at least one upper case letter and one digit")
+
     elif len(confirm_password) < 1:
         flash("Please confirm password")
     elif password != confirm_password:
         flash("Passwords must match")
-    elif not FIRSTLAST_REGEX.match(first_name):
-        flash("First Name can only contain letters")
-    elif not FIRSTLAST_REGEX.match(last_name):
-        flash("Last Name can only contain letters")
-    elif not EMAIL_REGEX.match(email):
-        flash("Invalid Email Address format")
-    elif not UPPERDIGIT_REGEX.match(password):
-        flash("Password must contain at least one upper case letter and one digit")
+
     else:
         return render_template("RegistrationForm_results.html",first_name = first_name, last_name = last_name, email = email, password = password, confirm_password = confirm_password)
     return redirect('/')
